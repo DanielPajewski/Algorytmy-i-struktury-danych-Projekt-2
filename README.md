@@ -4,4 +4,4 @@ Projekt jest prostym alarmem wykorzystuje mikrokontroler ATMega328P (Arduino), m
 # Funkcje
 Sterownikiem całegi obwodu jest mikrokontroler ATMega328P (Arduino)
 # Link
-https://www.tinkercad.com/things/kTcxIvqyMKj-ask/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard
+https://www.tinkercad.com/things/kTcxIvqyMKj-ask?sharecode=7MFY-UlmYapReJWqLh_6AfLYa9pHraKVC2Dxa0aHRac
