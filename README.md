@@ -40,3 +40,6 @@ Projekt jest prostym alarmem wykorzystuje mikrokontroler ATMega328P (Arduino), m
 
 # Link do projektu w TinkerCad
 https://www.tinkercad.com/things/kTcxIvqyMKj-ask?sharecode=7MFY-UlmYapReJWqLh_6AfLYa9pHraKVC2Dxa0aHRac
+
+# Opis działa alramu/Instrukcja obsługi
+Po włączeniu alarmu żaden czujnik nie jest aktywny o czym świadczy kreska wyświtlana na dole panelu LED, aby włączyć czujnik PIR należy wcisnąć przycisk znajdujący się po prawo od każdego czujnika. Każdy czujnik PIR posiada osobną dioda informującą o aktywności alarmu (dioda nieświeci-PIR wyłączony, dioda świeci-PIR włączony).Po włączeniu dowlonego PIRa (dioda świeci) kreska będzie świeci na górze panelu LED informując o tym, że alaram jest aktywny 
