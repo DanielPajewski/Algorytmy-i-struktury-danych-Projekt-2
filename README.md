@@ -1,55 +1,77 @@
-# Architektura systemów komputerowych-Zadanie semestralne 2
-# Opis projektu
-Projekt jest prostym alarmem wykorzystuje mikrokontroler ATMega328P (Arduino), mały wyświetlacz 7 pinowy oraz PIRy. Można ustawić każdego PIRa z osobna aby rejestrował wykrycie ruchu o którym informuje wyświetlacz, za informacje czy PIR zarejestruje wykryty ruch i przekaże go do wyświtlacza odpowiedzialna jest dioda, dioda świeci PIR rejestruje i przekazuje, dioda wyłączona PIR nie przekazuje.Każdą diode można włączyć i wyłączyć co jest jednoznacze z tym, że PIR wysyła bądź nie informacji do wyświetlenia
-# Funkcje
--Sterownik całego obwodu mikrokontroler ATMega328P (Arduino) 
+# Architektura systemów komputerowych – Zadanie semestralne 2
 
--Obsługa 5 czujników ruchu PIR
+## Opis projektu
+Projekt jest prostym alarmem wykorzystującym mikrokontroler ATMega328P (Arduino), jednocyfrowy wyświetlacz 7-segmentowy oraz czujniki ruchu PIR. Każdy czujnik PIR może być konfigurowany niezależnie w celu rejestrowania wykrycia ruchu, o czym informuje wyświetlacz.
 
--Możliwość wyłączenie i włączenia każdego czujnika
+Za informację o tym, czy dany czujnik PIR rejestruje wykryty ruch i przekazuje go do wyświetlacza, odpowiada dioda LED. Gdy dioda świeci, czujnik PIR jest aktywny i przekazuje informacje o wykryciu ruchu. Gdy dioda jest wyłączona, czujnik nie przekazuje żadnych danych. Każdy czujnik PIR można niezależnie włączać i wyłączać, co jednoznacznie określa jego stan aktywności.
 
--Każdy PIR posiada swjoą diode LED która informuje o włączeniu bądź wyłączeniu PIRa
+---
 
--Panel LED pokazuje informacje na temat aktywności alarmu (dolna kreska-nieaktywny, górna kreska aktywny)
+## Funkcje
+- Sterowanie całym obwodem za pomocą mikrokontrolera ATMega328P (Arduino)
+- Obsługa pięciu czujników ruchu PIR
+- Możliwość niezależnego włączania i wyłączania każdego czujnika
+- Każdy czujnik PIR posiada własną diodę LED informującą o jego stanie
+- Panel LED wyświetlający informacje o stanie alarmu:
+  - dolna kreska – alarm nieaktywny
+  - górna kreska – alarm aktywny
+- Licznik aktywnych czujników PIR (liczba wykrytych ruchów od 1 do 5)
 
--Licznik aktywnych PIRów (Licznik wykrytych ruchów od 1-5)
-# Zastosowany sprzęt
-•Mikrokontroler ATMega328P (Arduino)
+---
 
-•Czujnik ruch PIR x5
+## Zastosowany sprzęt
+- Mikrokontroler ATMega328P (Arduino)
+- Czujnik ruchu PIR ×5
+- Rezystor 1 kΩ ×10
+- Rezystor 250 Ω ×1
+- Wyświetlacz LED 7-segmentowy
+- Dioda LED (czerwona) ×5
+- Przycisk ×5
+- 8-bitowy rejestr przesuwny 74HC595
+- Przewody połączeniowe (różowy, fioletowy, czarny)
 
-•Rezystor 1kΩ x10
+---
 
-•Rezystor 250Ω x1
+## Schematy
 
-•Panel LED 7 pinowy
 
-•Dioda LED (czerwona) x5
+---
 
-•Przycisk x5
-
-•8-bitowy rejestr przesuwny (74HC595)
-
-•Przewody (różowy, fioletowy, czarny)
-# Schematy
-<img width="725" height="453" alt="image" src="https://github.com/user-attachments/assets/948c8be2-9c0f-4eee-8311-c14340274488" />
-
-<img width="876" height="677" alt="image" src="https://github.com/user-attachments/assets/43eb12a8-cbbb-4320-a599-78053584ba9d" />
-
-<img width="876" height="676" alt="image" src="https://github.com/user-attachments/assets/646b88c8-299a-4164-9208-9b56a03fd5e2" />
-
-# Link do projektu w TinkerCad
+## Link do projektu w Tinkercad
 https://www.tinkercad.com/things/kTcxIvqyMKj-ask?sharecode=7MFY-UlmYapReJWqLh_6AfLYa9pHraKVC2Dxa0aHRac
 
-# Opis działa alramu
-Po włączeniu alarmu żaden czujnik nie jest aktywny o czym świadczy kreska wyświtlana na dole panelu LED, aby włączyć czujnik PIR należy wcisnąć przycisk znajdujący się po prawo od każdego czujnika. Każdy czujnik PIR posiada osobną dioda informującą o aktywności alarmu (dioda nieświeci-PIR wyłączony, dioda świeci-PIR włączony).Po włączeniu dowlonego PIRa (dioda świeci) kreska będzie świeci na górze panelu LED informując o tym, że alaram jest aktywny. Gdy dioda LED świeci i PIR wykruje ruch ta informacja jest wyświetlana na panelu LED każdy PIR wysyła informacje o tym że wykrył ruch jeśli ruch został wykryty na jednym PIRze panel LED wyświetli 1 jeśli na dwuch wyświteli 2 i tak do 5. Aby wyłączyć czujnik PIR należy wcisnąć przycisk ponownie 
-# Opis działa programu
-Program obsługuje pięć czujników ruchu PIR, które mogą być niezależnie włączane i wyłączane za pomocą przycisków. Dla każdego czujnika zapamiętywany jest jego stan aktywności oraz informacja, czy wykrył on już ruch. Program zlicza liczbę czujników, które wykryły ruch, i wyświetla wynik na jednocyfrowym wyświetlaczu 7-segmentowym sterowanym przez rejestr przesuwny 74HC595.
+---
 
-Po uruchomieniu wszystkie czujniki są wyłączone, a licznik wykryć ustawiony na zero. Naciśnięcie przycisku powoduje zmianę stanu odpowiadającego mu czujnika. Włączenie czujnika zeruje licznik oraz informacje o wcześniejszych wykryciach, natomiast jego wyłączenie usuwa ewentualne wykrycie z licznika.
+## Opis działania alarmu
+Po włączeniu alarmu żaden czujnik PIR nie jest aktywny, co sygnalizowane jest dolną kreską wyświetlaną na panelu LED. Aby włączyć czujnik PIR, należy nacisnąć przycisk znajdujący się obok danego czujnika.
 
-Dla aktywnych czujników program sprawdza sygnał z wejścia PIR. Wykrycie ruchu powoduje zwiększenie licznika tylko jeden raz dla danego czujnika, co zapobiega wielokrotnemu zliczaniu.
+Każdy czujnik PIR posiada osobną diodę LED informującą o jego stanie:
+- zgaszona dioda – czujnik PIR wyłączony
+- zapalona dioda – czujnik PIR włączony
 
-Stan czujników jest sygnalizowany diodami LED – zapalona dioda oznacza czujnik wyłączony. Na wyświetlaczu 7-segmentowym prezentowany jest znak „–” przy braku aktywnych czujników, „0” gdy nie wykryto ruchu lub liczba odpowiadająca ilości wykrytych ruchów.
-# Autor
-Daniel Pajewski 21525
+Po włączeniu dowolnego czujnika PIR (zapalona dioda LED) na panelu LED pojawia się górna kreska, informująca o aktywnym alarmie. Gdy aktywny czujnik PIR wykryje ruch, informacja ta zostaje wyświetlona na panelu LED.
+
+Jeżeli ruch zostanie wykryty przez:
+- jeden czujnik – wyświetlana jest liczba **1**
+- dwa czujniki – wyświetlana jest liczba **2**
+- analogicznie aż do **5** czujników
+
+Aby wyłączyć czujnik PIR, należy ponownie nacisnąć odpowiadający mu przycisk.
+
+---
+
+## Opis działania programu
+Program obsługuje pięć czujników ruchu PIR, które mogą być niezależnie włączane i wyłączane za pomocą przycisków. Dla każdego czujnika zapamiętywany jest jego stan aktywności oraz informacja o tym, czy wykrył on już ruch.
+
+Po uruchomieniu programu wszystkie czujniki są wyłączone, a licznik wykryć ustawiony jest na zero. Naciśnięcie przycisku powoduje zmianę stanu odpowiadającego mu czujnika. Włączenie czujnika zeruje licznik oraz informacje o wcześniejszych wykryciach, natomiast jego wyłączenie usuwa ewentualne wykrycie z licznika.
+
+Dla aktywnych czujników program cyklicznie sprawdza sygnał z wejścia PIR. Wykrycie ruchu powoduje zwiększenie licznika tylko jeden raz dla danego czujnika, co zapobiega wielokrotnemu zliczaniu tego samego zdarzenia.
+
+Stan czujników sygnalizowany jest diodami LED. Na wyświetlaczu 7-segmentowym sterowanym przez rejestr przesuwny 74HC595 prezentowany jest znak „–” przy braku aktywnych czujników, „0” gdy nie wykryto ruchu lub liczba odpowiadająca ilości wykrytych ruchów.
+
+---
+
+## Autor
+Daniel Pajewski  
+Nr albumu: 21525
+
