@@ -33,6 +33,9 @@ Za informację o tym, czy dany czujnik PIR rejestruje wykryty ruch i przekazuje 
 ---
 
 ## Schematy
+<img width="725" height="453" alt="image" src="https://github.com/user-attachments/assets/ba234c07-a49d-4b45-990b-6c2f2c71db23" />
+<img width="1098" height="845" alt="image" src="https://github.com/user-attachments/assets/c70e900b-0f14-4a98-bebb-3dd8951ed3cc" />
+<img width="1092" height="846" alt="image" src="https://github.com/user-attachments/assets/414e005c-7c9d-4d4e-803e-1e4b42482d57" />
 
 
 ---
